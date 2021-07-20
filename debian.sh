@@ -2,9 +2,9 @@
 
 GID=1724
 UID=1724
-GROUP=dev
-USER=dev
-APP_HOME=/home/dev
+GROUP=theia
+USER=theia
+APP_HOME=/home/theia
 
 # Install extra package
 apt-get update &&\
@@ -15,10 +15,4 @@ rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # Create user and group
 addgroup --gid ${GID} ${GROUP} && \
 useradd -c "User for che" -d ${APP_HOME} -m -g ${GROUP} -s /bin/bash -u ${UID} ${USER} &&\
-echo "%dev ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/dev
-
-# Install gitflow
-cd /opt
-curl -LO https://raw.github.com/petervanderdoes/gitflow-avh/develop/contrib/gitflow-installer.sh
-sh gitflow-installer.sh install stable
-rm gitflow-installer.sh
+echo "%${GROUP} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/${GROUP}
