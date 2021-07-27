@@ -7,7 +7,7 @@ USER=theia
 APP_HOME=/home/theia
 
 # Install extra package
-microdnf install -y  sudo git wget curl ca-certificates zip vim make bash &&\
+microdnf install -y  sudo git wget curl ca-certificates zip vim make bash tar gunzip &&\
 microdnf clean all && \
 rm -rf /tmp/* /var/tmp/*
 
