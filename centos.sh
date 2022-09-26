@@ -7,8 +7,8 @@ USER=dev
 APP_HOME=/home/dev
 
 # Install extra package
-yum install -y  sudo git wget curl ca-certificates zip vim make bash &&\
-yum clean all && \
+dnf install -y  sudo git wget curl ca-certificates zip vim make bash &&\
+dnf clean all && \
 rm -rf /tmp/* /var/tmp/*
 
 # Create user and group
